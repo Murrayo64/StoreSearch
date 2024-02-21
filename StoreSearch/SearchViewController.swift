@@ -25,6 +25,7 @@ class SearchViewController: UIViewController {
 // MARK: - Search Bar Delegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         searchResults = []
         for i in 0...2 {
             searchResults.append(
@@ -33,6 +34,9 @@ extension SearchViewController: UISearchBarDelegate {
             )
         }
         tableView.reloadData()
+    }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
 }
 // MARK: - Table View Delegate
