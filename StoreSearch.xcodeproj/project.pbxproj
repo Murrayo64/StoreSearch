@@ -14,6 +14,8 @@
 		39ED21502B853953006008E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39ED214F2B853953006008E9 /* Assets.xcassets */; };
 		39ED21532B853953006008E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39ED21512B853953006008E9 /* LaunchScreen.storyboard */; };
 		39ED215B2B868FDF006008E9 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED215A2B868FDF006008E9 /* SearchResult.swift */; };
+		39ED215D2B869AA8006008E9 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39ED215C2B869AA8006008E9 /* SearchResultCell.xib */; };
+		39ED215F2B86A2FC006008E9 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ED215E2B86A2FC006008E9 /* SearchResultCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		39ED21522B853953006008E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39ED21542B853953006008E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39ED215A2B868FDF006008E9 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		39ED215C2B869AA8006008E9 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		39ED215E2B86A2FC006008E9 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				39ED21512B853953006008E9 /* LaunchScreen.storyboard */,
 				39ED21542B853953006008E9 /* Info.plist */,
 				39ED215A2B868FDF006008E9 /* SearchResult.swift */,
+				39ED215C2B869AA8006008E9 /* SearchResultCell.xib */,
+				39ED215E2B86A2FC006008E9 /* SearchResultCell.swift */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -130,6 +136,7 @@
 			files = (
 				39ED21532B853953006008E9 /* LaunchScreen.storyboard in Resources */,
 				39ED21502B853953006008E9 /* Assets.xcassets in Resources */,
+				39ED215D2B869AA8006008E9 /* SearchResultCell.xib in Resources */,
 				39ED214E2B853952006008E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +152,7 @@
 				39ED21472B853952006008E9 /* AppDelegate.swift in Sources */,
 				39ED215B2B868FDF006008E9 /* SearchResult.swift in Sources */,
 				39ED21492B853952006008E9 /* SceneDelegate.swift in Sources */,
+				39ED215F2B86A2FC006008E9 /* SearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
