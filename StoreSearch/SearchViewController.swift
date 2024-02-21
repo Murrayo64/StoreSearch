@@ -10,6 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     var searchResults = [SearchResult]()
+    var hasSearched = false
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -27,12 +28,15 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchResults = []
-        for i in 0...2 {
-            let searchResult = SearchResult()
-            searchResult.name = String(format: "Fake Result %d for", i)
-            searchResult.artistName = searchBar.text!
-            searchResults.append(searchResult)
+        if searchBar.text! != "justin bieber" {
+            for i in 0...2 {
+                let searchResult = SearchResult()
+                searchResult.name = String(format: "Fake Result %d for", i)
+                searchResult.artistName = searchBar.text!
+                searchResults.append(searchResult)
+            }
         }
+        hasSearched = true
         tableView.reloadData()
     }
     func position(for bar: UIBarPositioning) -> UIBarPosition {
@@ -42,7 +46,14 @@ extension SearchViewController: UISearchBarDelegate {
 // MARK: - Table View Delegate
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        if !hasSearched {
+            return 0
+        } else if searchResults.count == 0 {
+            return 1
+        } else {
+            return searchResults.count
+        }
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,9 +65,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 cell = UITableViewCell(
                     style: .subtitle, reuseIdentifier: cellIdentifier)
             }
-        let searchResult = searchResults[indexPath.row]
-        cell?.textLabel!.text = searchResult.name
-        cell?.detailTextLabel!.text = searchResult.artistName
+        if searchResults.count == 0 {
+            cell?.textLabel!.text = "(Nothing found)"
+            cell?.detailTextLabel!.text = ""
+        } else {
+            let searchResult = searchResults[indexPath.row]
+            cell?.textLabel!.text = searchResult.name
+            cell?.detailTextLabel!.text = searchResult.artistName
+        }
+
         return cell!
         }
     }
