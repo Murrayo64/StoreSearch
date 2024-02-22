@@ -92,7 +92,8 @@ extension SearchViewController: UISearchBarDelegate {
             print("URL: '\(url)'")
             if let data = performStoreRequest(with: url) {
                 searchResults = parse(data: data)
-                searchResults.sort { $0.name.localizedStandardCompare($1.name) == .orderedAscending }            }
+                searchResults.sort(by: <)
+            }
             
             tableView.reloadData()
         }
