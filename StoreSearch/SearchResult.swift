@@ -38,7 +38,7 @@ class SearchResult: Codable, CustomStringConvertible {
         case trackName, trackPrice, trackViewUrl
         case collectionName, collectionViewUrl, collectionPrice
     }
-    
+    // MARK: - Computed Properties
     var name: String {
         return trackName ?? collectionName ?? ""
     }
@@ -60,5 +60,13 @@ class SearchResult: Codable, CustomStringConvertible {
             return genres.joined(separator: ", ")
         }
         return ""
+    }
+    
+    var type: String {
+        return kind ?? "audiobook"
+    }
+    
+    var artist: String {
+        return artistName ?? ""
     }
 }
