@@ -43,6 +43,13 @@ class SearchResultCell: UITableViewCell {
             downloadTask = artworkImageView.loadImage(url: smallURL)
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        downloadTask?.cancel()
+        downloadTask = nil
+    }
+    
 }
 // MARK: - Table View Delegate
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
