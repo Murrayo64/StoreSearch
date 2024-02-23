@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -33,6 +33,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="CXK-Vs-lBd"/>
                                 </connections>
                             </searchBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQr-5c-rVn">
+                                <rect key="frame" x="0.0" y="76" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="0Jw-LJ-n0l">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="wLA-7L-pYb">
+                                            <rect key="frame" x="16" y="5.5" width="343" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Music"/>
+                                                <segment title="Software"/>
+                                                <segment title="E-books"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,8 +58,11 @@
                             <constraint firstItem="Jxs-Tt-knV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6oe-hA-0WS"/>
                             <constraint firstItem="Jxs-Tt-knV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ONH-6u-h42"/>
                             <constraint firstItem="Jxs-Tt-knV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VLM-Ju-j7x"/>
+                            <constraint firstItem="vQr-5c-rVn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aoo-ew-aoT"/>
                             <constraint firstItem="Jxs-Tt-knV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="erJ-wA-SlI"/>
                             <constraint firstItem="IpE-PN-fF3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m5W-jd-Fad"/>
+                            <constraint firstItem="vQr-5c-rVn" firstAttribute="top" secondItem="IpE-PN-fF3" secondAttribute="bottom" id="mrc-yJ-kVD"/>
+                            <constraint firstItem="vQr-5c-rVn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="q5B-kl-zJT"/>
                             <constraint firstItem="IpE-PN-fF3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yYK-to-gKW"/>
                         </constraints>
                     </view>
