@@ -73,7 +73,7 @@
                         <outlet property="searchBar" destination="IpE-PN-fF3" id="Gp8-PY-kff"/>
                         <outlet property="segmentedControl" destination="wLA-7L-pYb" id="RcQ-ng-uxJ"/>
                         <outlet property="tableView" destination="Jxs-Tt-knV" id="tyv-1h-1Yn"/>
-                        <segue destination="5FS-lI-bB6" kind="presentation" identifier="ShowDetail" id="eo6-ej-Ipb"/>
+                        <segue destination="5FS-lI-bB6" kind="presentation" identifier="ShowDetail" modalPresentationStyle="overFullScreen" id="eo6-ej-Ipb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,11 +85,11 @@
             <objects>
                 <viewController id="5FS-lI-bB6" userLabel="Detail" customClass="DetailViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Nh-KR-GaX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jW6-06-U2p" userLabel="Pop-up View">
-                                <rect key="frame" x="47.5" y="183.5" width="280" height="280"/>
+                                <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwv-Br-xJC" userLabel="Close Button">
                                         <rect key="frame" x="222" y="8" width="50" height="34"/>
