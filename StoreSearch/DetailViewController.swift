@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var priceButton: UIButton!
     var searchResult: SearchResult!
+    var downloadTask: URLSessionDownloadTask?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +72,17 @@ class DetailViewController: UIViewController {
             priceText = ""
         }
         priceButton.setTitle(priceText, for: .normal)
+        
+        // Get image
+        if let largeURL = URL(string: searchResult.imageLarge) {
+            downloadTask = artworkImageView.loadImage(url: largeURL)
+            
+        }
+        
+    }
+    deinit {
+        print("deinit \(self)")
+        downloadTask?.cancel()
     }
 
 }
@@ -81,3 +93,4 @@ extension DetailViewController: UIGestureRecognizerDelegate {
             return (touch.view === self.view)
         }
 }
+
