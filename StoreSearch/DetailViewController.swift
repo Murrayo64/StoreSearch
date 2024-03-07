@@ -30,6 +30,12 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Gradient View
+        view.backgroundColor = UIColor.clear
+        let dimmingView = GradientView(frame: CGRect.zero)
+        dimmingView.frame = view.bounds
+        view.insertSubview(dimmingView, at: 0)
+        
         popupView.layer.cornerRadius = 10
         let gestureRecognizer = UITapGestureRecognizer(
             target: self,
@@ -41,7 +47,14 @@ class DetailViewController: UIViewController {
         if searchResult != nil {
             updateUI()
         }
+        
 
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        transitioningDelegate = self
     }
     
     // MARK: - Helper Methods
@@ -93,4 +106,12 @@ extension DetailViewController: UIGestureRecognizerDelegate {
             return (touch.view === self.view)
         }
 }
-
+extension DetailViewController:
+    UIViewControllerTransitioningDelegate {
+    func animationController(
+        forPresented presented: UIViewController,
+        presenting: UIViewController,
+        source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            return BounceAnimationController()
+        }
+}
